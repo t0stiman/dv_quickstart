@@ -1,0 +1,10 @@
+{
+	"Id": "dv_quickstart",
+	"Version": "0.0.1",
+	"DisplayName": "QuickStart",
+	"Author": "Tostiman",
+	"EntryMethod": "dv_quickstart.Main.Load",
+	"AssemblyName": "dv_quickstart.dll",
+	"HomePage": "https://github.com/t0stiman/dv_quickstart",
+	"Repository": "https://raw.githubusercontent.com/t0stiman/dv_quickstart/master/repository.json"
+}
