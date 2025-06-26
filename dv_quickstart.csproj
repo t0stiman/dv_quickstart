@@ -2,8 +2,9 @@
   <PropertyGroup>
     <AssemblyName>dv_quickstart</AssemblyName>
     <TargetFramework>net48</TargetFramework>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>10</LangVersion>
     <WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>
+  	<PublicizerClearCacheOnClean>true</PublicizerClearCacheOnClean>
   </PropertyGroup>
 
   <ItemGroup>
@@ -140,10 +141,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="package.ps1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Krafs.Publicizer" Version="2.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -152,17 +149,6 @@
 
   <ItemGroup>
     <Publicize Include="Assembly-CSharp" />
-    <Publicize Include="DV.CharacterController" />    
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <!-- Copy to build folder -->
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="build/" />
-
-    <!-- Package after Release build -->
-    <Exec Condition="'$(OS)' == 'Windows_NT'" Command="powershell -executionpolicy bypass .\package.ps1 -NoArchive -OutputDirectory 'D:\Programs\Derail Valley\Mods'" />
-    <!-- Linux -->
-    <Exec Condition="'$(OS)' != 'Windows_NT'" Command="pwsh -Command &quot;(package.ps1)&quot;" />
-  </Target>
 
 </Project>
