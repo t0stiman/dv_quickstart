@@ -1,6 +1,6 @@
 {
 	"Id": "dv_quickstart",
-	"Version": "0.0.1",
+	"Version": "0.0.2",
 	"DisplayName": "QuickStart",
 	"Author": "Tostiman",
 	"EntryMethod": "dv_quickstart.Main.Load",
