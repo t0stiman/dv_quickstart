@@ -10,8 +10,13 @@ namespace dv_quickstart;
 [HarmonyPatch(nameof(MainMenu.Start))]
 public class MainMenu_Patch
 {
+	private static bool firstStart = true;
+	
 	private static void Postfix(MainMenu __instance)
 	{
+		if(!firstStart) return;
+		firstStart = false;
+		
 		var args = System.Environment.GetCommandLineArgs();
 		
 		//find quickstart argument
